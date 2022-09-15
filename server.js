@@ -3,7 +3,7 @@ const express = require('express');
 
 // require the db.json file and assign it to the variable 'db'
 const db = require('./db/db.json')
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // initialize app variable setting it to the value of express()
 const app = express();
@@ -29,5 +29,5 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log("Server is listening");
+    console.log(`API server is listening on port ${PORT}!`);
 });
