@@ -31,10 +31,6 @@ To Install and begin working on the Note Taker follow these easy steps:
 To run the application open the project folder in the terminal
 Enter the command 'npm start'
 
-## Demo
-
-![Application Demo](./assets/videos/Team-Profile-Generator-Demo.mp4)(https://drive.google.com/file/d/1ahVN7z0efKFsb9a5Wni44MR3eq_Xwrgc/view?usp=sharing)
-
 ## Credits
 
 Rich Widtmann [Professional README Guide](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
