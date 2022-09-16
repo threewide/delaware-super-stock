@@ -28,6 +28,7 @@ app.get('/api/notes', (req, res) => {
     res.json(db);
 });
 
+// listening on PORT
 app.listen(PORT, () => {
     console.log(`API server is listening on port ${PORT}!`);
 });
