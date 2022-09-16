@@ -11,30 +11,25 @@ Note Taker is an application that can be used to write and save notes. It is hel
 - [Demo](#demo)
 - [Credits](#credits)
 - [License](#license)
-- [Features](#features)
-- [Tests](#tests)
 
 ## Installation
 To Install and begin working on the Note Taker follow these easy steps:
 
-1. Open the terminal to the directory you would like the repo saved in
-2. In the terminal enter 'heroku git:clone -a delaware-super-stocklog' to create a clone of the Note Taker Repository
-3. In the terminal enter 'code .' to open the project in Visual Studios development environment
+1. Open the terminal at the directory you would like to clone the project
+2. In the terminal enter: '<b>heroku git:clone -a delaware-super-stock</b>' to create a clone of the Note Taker Repository
+3. In the terminal enter: '<b>code .</b>' to open the project in Visual Studios development environment
 
-![Installation](./assets/images/installation-guide.png)
+![Installation](./public/assets/images/installation.png)
 
-5. The project will still need its package.json so to install that on your machine in the same terminal window enter 'npm i'. This will add all npm files, dependencies and node_modules.
+5. The project will still need to install the required node packages. In the terminal window change directories into the newly cloned Note Taker Project by entering: '<b>cd delaware-super-stock</b>' 
+6. Now that you are in the correct directory install the node packages with: '<b>npm i</b>'.
 
-![npm Installation](./assets/images/npm-install.png)
-![Added Files](./assets/images/added-files.png)
+![npm Installation](./public/assets/images/npm-installation.png)
 
 ## Usage
 
 To run the application open the project folder in the terminal
 Enter the command 'npm start'
-This will prompt the user for the Manager credentials
-Answer the different prompts and it will store all of the answers in an array to be used in the Team Profile Generator.
-Use FS (file system) to create a basic html page with the users input about team members
 
 ## Demo
 

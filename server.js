@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 3001;
 // initialize app variable setting it to the value of express()
 const app = express();
 
+// Handle Data Parsing
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // serves css and js files from public directory
 app.use(express.static('public'));
 
@@ -28,6 +32,7 @@ app.post('/api/notes', (req, res) => {
 
     // Log our request to the terminal
     console.info(`${req.method} request received to upvote`);
+    console.log(req.body);
 });
 
 // add a static route for index.html
