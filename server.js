@@ -1,8 +1,12 @@
 // import express package
 const express = require('express');
 
+// import uniqid
+var uniqid = require('uniqid'); 
+
 // require the db.json file and assign it to the variable 'db'
 const db = require('./db/db.json')
+
 const PORT = process.env.PORT || 3001;
 
 // initialize app variable setting it to the value of express()
@@ -27,12 +31,33 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.post('/api/notes', (req, res) => {
-    // Inform the client that their POST request was received
-    res.json(`${req.method} request received to upvote`);
+    // log that a POST request was received
+    console.info(`${req.method} request received to add note`);
 
-    // Log our request to the terminal
-    console.info(`${req.method} request received to upvote`);
-    console.log(req.body);
+    // Destructuring assignment for the items in req.body
+    const { title, text } = req.body;
+
+    // If all the required properties are present
+    if (title && text) {
+
+        // Variable for the object we will save
+        const newNote = {
+        title,
+        text,
+        note_id: uniqid(),
+        };
+
+        const response = {
+        status: 'success',
+        body: newNote,
+        };
+
+        console.log(response);
+        res.json(response);
+    }
+    else {
+        res.json('Error in adding note');
+    }
 });
 
 // add a static route for index.html
