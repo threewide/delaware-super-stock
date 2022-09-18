@@ -4,6 +4,9 @@ const express = require('express');
 // import uniqid
 var uniqid = require('uniqid'); 
 
+// import fs
+const fs = require('fs');
+
 // require the db.json file and assign it to the variable 'db'
 const db = require('./db/db.json')
 
@@ -46,6 +49,30 @@ app.post('/api/notes', (req, res) => {
         text,
         note_id: uniqid(),
         };
+
+        // Obtain existing reviews
+        fs.readFile('./db/db.json', 'utf8', (err, data) => {
+            if (err) {
+                console.error(err);
+            } 
+            else {
+            // convert string into JSON object
+            const parsedNotes = JSON.parse(data);
+
+            // Add a new review
+            parsedNotes.push(newNote);
+
+            // Write updated notes back to the file
+            fs.writeFile(
+                './db/db.json',
+                JSON.stringify(parsedNotes, null, 4),
+                (writeErr) =>
+                writeErr
+                    ? console.error(writeErr)
+                    : console.info('Successfully updated notes!')
+            );
+            }
+        });
 
         const response = {
         status: 'success',
